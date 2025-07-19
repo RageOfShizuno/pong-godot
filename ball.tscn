@@ -1,0 +1,22 @@
+[gd_scene load_steps=3 format=3 uid="uid://drnwvhak52b8e"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_cbx31"]
+friction = 0.0
+bounce = 1.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_cbx31"]
+radius = 16.0
+
+[node name="Ball" type="RigidBody2D"]
+physics_material_override = SubResource("PhysicsMaterial_cbx31")
+gravity_scale = 0.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(640, 360)
+shape = SubResource("CircleShape2D_cbx31")
+
+[node name="ColorRect" type="ColorRect" parent="CollisionShape2D"]
+offset_left = -16.0
+offset_top = -16.0
+offset_right = 16.0
+offset_bottom = 16.0
