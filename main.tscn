@@ -1,8 +1,11 @@
-[gd_scene load_steps=4 format=3 uid="uid://drcwwcmpaqdrr"]
+[gd_scene load_steps=7 format=3 uid="uid://drcwwcmpaqdrr"]
 
 [ext_resource type="PackedScene" uid="uid://dmyy4de1nxyi" path="res://paddle.tscn" id="1_0xm2m"]
 [ext_resource type="Script" uid="uid://84bqrne6itcf" path="res://main.gd" id="1_h2yge"]
 [ext_resource type="Script" uid="uid://io8ckamgdhgu" path="res://paddle.gd" id="2_h2yge"]
+[ext_resource type="PackedScene" uid="uid://bx7xwipdy6fie" path="res://walls.tscn" id="4_1bvp3"]
+[ext_resource type="PackedScene" uid="uid://drnwvhak52b8e" path="res://ball.tscn" id="5_lquwl"]
+[ext_resource type="Script" uid="uid://cxtiul8tw0dme" path="res://ball.gd" id="6_7mycd"]
 
 [node name="Main" type="Node2D"]
 script = ExtResource("1_h2yge")
@@ -12,3 +15,10 @@ script = ExtResource("2_h2yge")
 
 [node name="Paddle Right" parent="." instance=ExtResource("1_0xm2m")]
 position = Vector2(1260, 0)
+script = ExtResource("2_h2yge")
+paddle_side = "right"
+
+[node name="Walls" parent="." instance=ExtResource("4_1bvp3")]
+
+[node name="Ball" parent="." instance=ExtResource("5_lquwl")]
+script = ExtResource("6_7mycd")
